@@ -6,10 +6,29 @@ steps:
     entrypoint: /bin/sh
     args:
     - -c
-    - 'pip install -r requirements.tst && pytest .'
+    - 'pip install -r requirements.txt' # && python test_app.py -v'
 - name: "gcr.io/cloud-builders/gcloud"
   id: "AppEngine Deploy"
   entrypoint: "gcloud"
   args: ["app", "deploy"]
   dir: "text_classifier"
   timeout: "1600s" 
+
+
+# # This step builds the container image.
+# - name: 'gcr.io/cloud-builders/docker'
+#   id: Build
+#   args:
+#   - 'build'
+#   - '-t'
+#   - 'gcr.io/$PROJECT_ID/hello-cloudbuild:$SHORT_SHA'
+#   - '.'
+
+# # This step pushes the image to Container Registry
+# # The PROJECT_ID and SHORT_SHA variables are automatically
+# # replaced by Cloud Build.
+# - name: 'gcr.io/cloud-builders/docker'
+#   id: Push
+#   args:
+#   - 'push'
+#   - 'gcr.io/$PROJECT_ID/hello-cloudbuild:$SHORT_SHA'
