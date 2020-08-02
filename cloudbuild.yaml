@@ -6,7 +6,7 @@ steps:
     entrypoint: /bin/sh
     args:
     - -c
-    - 'pip install -r text_classifier/requirements.txt && ls -l && pytest .'
+    - 'ls -l && conda install --file text_classifier/requirements.txt -c conda-forge -y && pytest .'
 
 # - name: "gcr.io/cloud-builders/gcloud"
 #   id: "AppEngine Deploy"
