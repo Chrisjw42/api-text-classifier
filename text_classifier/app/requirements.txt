@@ -1,7 +1,0 @@
-# TODO: pin these bitches
-fastapi
-pandas
-uvicorn
-
-#pytest
-#expects
