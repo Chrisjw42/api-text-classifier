@@ -1,6 +1,6 @@
 # runtime: python
 # runtime: python37 # Use the provided python environment (don't use the custom Dokcerfile)
-runtime: custom # Use the dockerfile provided in the repo
+runtime: custom # Run the app in an environment defined by the dockerfile, rather than the gloud env
 env: flex # Required for custoem, somehow clashes with pytho37 environment
 # instance_class: F1 # https://cloud.google.com/appengine/docs/standard#instance_classes
 entrypoint: uvicorn app.main:app --host 0.0.0.0 --port 8080
