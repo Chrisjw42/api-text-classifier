@@ -1,7 +1,7 @@
 # Use the gcloud cloud builder (it is a container image running common tools) - analogous to a GL "runner"?
 # This step runs the unit tests on the app
 steps:
-  - name: "continuumio/miniconda"
+  - name: "frolvlad/alpine-miniconda3"
     id: Test
     entrypoint: /bin/sh
     args:
