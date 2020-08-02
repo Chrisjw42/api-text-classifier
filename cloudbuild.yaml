@@ -8,7 +8,6 @@ steps:
     pip install -r requirements.txt
     # cd cloudcode/hello-world/tests
     pytest .
-
 - name: "gcr.io/cloud-builders/gcloud"
   id: "AppEngine Deploy"
   entrypoint: "gcloud"
