@@ -1,16 +1,16 @@
 # Use the gcloud cloud builder (it is a container image running common tools) - analogous to a GL 'runner'?
 steps:
 - name: "docker.io/library/python3.7"
-  id: Test
-  entrypoint: /bin/sh
-  - -c
+  id: "Test"
+  entrypoint: "/bin/sh"
+  - "-c"
   - |
     pip install -r requirements.txt
     # cd cloudcode/hello-world/tests
     pytest .
 
 - name: "gcr.io/cloud-builders/gcloud"
-  id: AppEngine Deploy
+  id: "AppEngine Deploy"
   entrypoint: "gcloud"
   args: ["app", "deploy"]
   dir: "text_classifier"
