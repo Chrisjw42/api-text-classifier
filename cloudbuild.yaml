@@ -6,7 +6,7 @@ steps:
     entrypoint: /bin/sh
     args:
     - -c
-    - 'pip install -r requirements.txt'
+    - 'pip install -r text_classifier/requirements.txt && pytest text_classifier'
 
 # && python test_app.py -v'
 # - name: "gcr.io/cloud-builders/gcloud"
