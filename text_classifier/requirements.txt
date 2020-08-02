@@ -1,5 +1,6 @@
 fastapi==0.60.0
 uvicorn
 pandas==1.1.0
-pytest==6.0.1
+pytest
+isort # dodgy import issues, requires conda installation
 pytest-pylint

@@ -13,6 +13,7 @@ steps:
       conda config --add channels conda-forge && \
       conda config --set channel_priority strict && \
       conda install --file requirements.txt -c conda-forge -y && \
+      conda list && \
       pytest --pylint --verbose .
 
 # - name: "gcr.io/cloud-builders/gcloud"
