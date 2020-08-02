@@ -15,8 +15,21 @@ class AssessmentRequest(BaseModel):
 
 @app.get("/")
 def read_root():
+    """Simple root returner for debugging
+
+    :return: hello world dict
+    :rtype: dict
+    """
     return {"Hello": "World"}
 
 @app.post("/assess_text")
 def assess_text(request: AssessmentRequest):
+    """Main assessment function, takes text and does the magic.
+
+    :param request: main reqeust object, declaring this explicity gives editor support.
+    :type request: AssessmentRequest
+    :return: result of assessment
+    :rtype: dict
+    """
+
     return {"passed_text": request.text, "morphed_text":request.text.upper()}
