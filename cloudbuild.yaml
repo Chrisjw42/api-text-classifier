@@ -2,5 +2,6 @@
 steps:
 - name: "gcr.io/cloud-builders/gcloud"
   entrypoint: "gcloud"
-  args: ["app", "deploy", "text_classifier"]
+  args: ["app", "deploy"]
+  dir: "text_classifier"
   timeout: "1600s" 
