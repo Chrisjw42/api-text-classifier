@@ -1,17 +1,21 @@
-# https://fastapi.tiangolo.com/
+"""main API definition using FastApi
+"""
 from typing import Optional
 
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel # pylint: disable=E0611
 
 app = FastAPI()
 
 
+# pylint: disable=too-few-public-methods
 class AssessmentRequest(BaseModel):
+    """Main request object, specifying the values that are required over the API.
+    """
     # Each of these attributes can be passed in the request body
     requester_name: Optional[str] = None
     text: str
-    
+
 
 @app.get("/")
 def read_root():
