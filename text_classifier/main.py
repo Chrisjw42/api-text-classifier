@@ -7,22 +7,16 @@ from pydantic import BaseModel
 app = FastAPI()
 
 
-class Item(BaseModel):
-    name: str
-    price: float
-    is_offer: Optional[bool] = None
-
+class AssessmentRequest(BaseModel):
+    # Each of these attributes can be passed in the request body
+    requester_name: Optional[str] = None
+    text: str
+    
 
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
 
-# q is optional
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
-
-# # Validates that item_id is an int 
-# @app.put("/items/{item_id}")
-# def update_item(item_id: int, item: Item):
-#     return {"item_name": item.name, "item_id": item_id}
+@app.post("/assess_text")
+def assess_text(request: AssessmentRequest):
+    return {"passed_text": request.text, "morphed_text":request.text.upper()}
