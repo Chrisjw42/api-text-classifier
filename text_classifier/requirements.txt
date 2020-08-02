@@ -3,7 +3,5 @@ fastapi
 pandas
 uvicorn
 
-
-
 #pytest
 #expects
