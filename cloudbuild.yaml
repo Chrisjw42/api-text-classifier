@@ -1,12 +1,12 @@
-# Use the gcloud cloud builder (it is a container image running common tools) - analogous to a GL 'runner'?
+# Use the gcloud cloud builder (it is a container image running common tools) - analogous to a GL "runner"?
 # This step runs the unit tests on the app
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
+  - name: "continuumio/miniconda"
     id: Test
     entrypoint: /bin/sh
     args:
     - -c
-    - 'ls -l && conda install --file text_classifier/requirements.txt -c conda-forge -y && pytest --pylint --verbose .'
+    - "ls -l && conda install --file text_classifier/requirements.txt -c conda-forge -y && pytest --pylint --verbose ."
 # - name: "gcr.io/cloud-builders/gcloud"
 #   id: "AppEngine Deploy"
 #   entrypoint: "gcloud"
