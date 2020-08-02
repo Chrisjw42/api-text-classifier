@@ -6,7 +6,7 @@ steps:
     entrypoint: /bin/sh
     args:
     - -c
-    - 'pip install pytest'
+    - 'pip install -r requirements.txt'
 
 # && python test_app.py -v'
 # - name: "gcr.io/cloud-builders/gcloud"
