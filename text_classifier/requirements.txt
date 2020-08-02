@@ -1,5 +1,5 @@
 fastapi==0.60.0
-uvicorn==0.11.3
+uvicorn
 pandas==1.1.0
 pytest==6.0.1
-pytest-pylint==0.17.0
+pytest-pylint

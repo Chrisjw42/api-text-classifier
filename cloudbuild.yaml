@@ -8,10 +8,13 @@ steps:
     - -c
     - |
       ls -l && \
+      cd text_classifier && \
+      ls -l && \
       conda config --add channels conda-forge && \
       conda config --set channel_priority strict && \
-      conda install --file text_classifier/requirements.txt -c conda-forge -y && \
+      conda install --file requirements.txt -c conda-forge -y && \
       pytest --pylint --verbose .
+
 # - name: "gcr.io/cloud-builders/gcloud"
 #   id: "AppEngine Deploy"
 #   entrypoint: "gcloud"
