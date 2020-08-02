@@ -1,13 +1,12 @@
 # Use the gcloud cloud builder (it is a container image running common tools) - analogous to a GL 'runner'?
 steps:
-- name: "docker.io/library/python3.7"
-  id: "Test"
-  entrypoint: "/bin/sh"
-  - "-c"
-  - |
-    pip install -r requirements.txt
-    # cd cloudcode/hello-world/tests
-    pytest .
+  # This step runs the unit tests on the app
+  - name: 'python:3.7-slim'
+    id: Test
+    entrypoint: /bin/sh
+    args:
+    - -c
+    - 'pip install -r requirements.tst && pytest .'
 - name: "gcr.io/cloud-builders/gcloud"
   id: "AppEngine Deploy"
   entrypoint: "gcloud"
