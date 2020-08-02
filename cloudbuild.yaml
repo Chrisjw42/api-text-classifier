@@ -15,10 +15,9 @@ steps:
       conda install --file requirements.txt -c conda-forge -y && \
       conda list && \
       pytest --pylint --verbose .
-
-# - name: "gcr.io/cloud-builders/gcloud"
-#   id: "AppEngine Deploy"
-#   entrypoint: "gcloud"
-#   args: ["app", "deploy"]
-#   dir: "text_classifier"
-#   timeout: "1600s"
+  - name: "gcr.io/cloud-builders/gcloud"
+    id: "AppEngine Deploy"
+    entrypoint: "gcloud"
+    args: ["app", "deploy"]
+    dir: "text_classifier"
+    timeout: "1600s"
