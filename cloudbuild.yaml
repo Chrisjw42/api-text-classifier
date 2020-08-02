@@ -1,6 +1,8 @@
 # Use the gcloud cloud builder (it is a container image running common tools) - analogous to a GL 'runner'?
 steps:
 - name: "gcr.io/cloud-builders/gcloud"
+  args: ["cd", "text_classifier"]
+- name: "gcr.io/cloud-builders/gcloud"
   entrypoint: "gcloud"
   args: ["app", "deploy"]
   timeout: "1600s" 
